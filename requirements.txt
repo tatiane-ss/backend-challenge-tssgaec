@@ -1,0 +1,6 @@
+# dependencias principais do projeto
+
+fastapi
+pydantic
+PyJWT
+uvicorn

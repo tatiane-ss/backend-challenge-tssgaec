@@ -1,0 +1,8 @@
+# dependencias principais + ferramentas de desenvolvimento
+
+-r requirements.txt
+
+httpx
+pytest
+pytest-cov
+ruff

@@ -4,6 +4,8 @@ from typing import Any
 import jwt
 from jwt.exceptions import InvalidTokenError
 
+from app.validators.claim_validators import are_claims_valid
+
 BASE64URL_SEGMENT_PATTERN = re.compile(r"^[A-Za-z0-9_-]+$")
 
 
@@ -47,3 +49,12 @@ def decode_jwt_payload(token: object) -> dict[str, Any] | None:
         return None
 
     return payload
+
+
+def validate_jwt(token: object) -> bool:
+    payload = decode_jwt_payload(token)
+
+    if payload is None:
+        return False
+
+    return are_claims_valid(payload)

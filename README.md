@@ -255,6 +255,37 @@ O argumento `--reload` é utilizado durante desenvolvimento para reiniciar autom
 
 ---
 
+# Executar com Docker
+
+## Usando Docker Compose
+
+Na raiz do projeto, execute:
+
+```bash
+docker compose up --build
+```
+
+A aplicação ficará disponível em:
+
+```text
+http://localhost:8000
+```
+
+Para parar os containers:
+
+```bash
+docker compose down
+```
+
+## Usando Docker diretamente
+
+```bash
+docker build -t jwt-validator-api .
+docker run -p 8000:8000 jwt-validator-api
+```
+
+---
+
 # Health check
 
 Para verificar se a aplicação está funcionando:

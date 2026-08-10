@@ -1,0 +1,61 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-08-09T00:00:00.000Z",
+  "__export_source": "backend-challenge-tssgaec",
+  "resources": [
+    {
+      "_id": "wrk_jwt_validator_api",
+      "type": "workspace",
+      "parentId": null,
+      "name": "JWT Validator API",
+      "description": "Collection com as rotas disponíveis da API"
+    },
+    {
+      "_id": "fld_routes",
+      "type": "request_group",
+      "parentId": "wrk_jwt_validator_api",
+      "name": "Rotas",
+      "description": "Endpoints da aplicação"
+    },
+    {
+      "_id": "req_health",
+      "type": "request",
+      "parentId": "fld_routes",
+      "name": "Health Check",
+      "method": "GET",
+      "url": "http://localhost:8000/health",
+      "description": "Verifica se a API está em execução",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "body": {}
+    },
+    {
+      "_id": "req_validate_jwt",
+      "type": "request",
+      "parentId": "fld_routes",
+      "name": "Validar JWT",
+      "method": "POST",
+      "url": "http://localhost:8000/api/v1/jwt/validate",
+      "description": "Valida um token JWT conforme as regras do desafio",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjoiNzg0MSIsIk5hbWUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05sIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg\"\n}"
+      }
+    }
+  ]
+}
